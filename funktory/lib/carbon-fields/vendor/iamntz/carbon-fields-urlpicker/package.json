@@ -1,0 +1,34 @@
+{
+  "name": "carbon-field-urlpicker",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack -w",
+    "build": "webpack"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "3.10.*"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "lodash": "^4.17.4",
+    "object-path-immutable": "^0.5.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-color": "^2.13.8",
+    "react-dom": "^16.2.0",
+    "react-flatpickr": "^3.6.3",
+    "react-onclickoutside": "^6.7.0",
+    "react-redux": "^5.0.6",
+    "recompose": "^0.26.0",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1"
+  }
+}

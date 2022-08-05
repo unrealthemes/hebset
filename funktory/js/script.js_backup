@@ -1,0 +1,99 @@
+jQuery(document).ready(function () {
+
+    //
+    $('#select_by_date').on( 'change', function( e ) {
+        
+        var val = $(this).val();
+        $('.statistic_wrapper').removeClass('section-show').addClass('section-hide');
+        $( '#' + val + '.statistic_wrapper').removeClass('section-hide').addClass('section-show');
+    })
+    //
+
+    let wrapper = $('.wrapper');
+
+    let headerBottom = $('.header-bottom');
+
+    $(window).scroll(function() {
+
+        let headerTopHeight = $('.header-top').height();
+
+        let headerBottomHeight = $('.header-bottom').height();
+
+
+
+        if($(this).scrollTop() > headerTopHeight) {
+
+            headerBottom.addClass('header-bottom_fixed');
+
+            wrapper.css('padding-top', headerBottomHeight + 'px');
+
+        } else {
+
+            headerBottom.removeClass('header-bottom_fixed');
+
+            wrapper.css('padding-top', '0');
+
+        }
+
+    });
+
+
+
+    $('.hamburger').click(function () {
+
+        $(this).toggleClass('open');
+
+        $('.header-bottom__nav-mobile').toggleClass('open').slideToggle();
+
+    })
+
+
+
+    // sort in table
+
+    $("#payouts__table").tablesorter();
+
+    let tableSortEl = $('#payouts__table thead th');
+
+})
+
+
+
+
+
+//// Функция определения поддержки формата Webp
+
+function testWebP(callback) {
+
+
+
+    var webP = new Image();
+
+    webP.onload = webP.onerror = function () {
+
+        callback(webP.height == 2);
+
+    };
+
+    webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+
+}
+
+
+
+testWebP(function (support) {
+
+
+
+    if (support == true) {
+
+        document.querySelector('body').classList.add('webp');
+
+    }else{
+
+        document.querySelector('body').classList.add('no-webp');
+
+    }
+
+});
+
